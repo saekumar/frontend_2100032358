@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Data Table</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+        margin: 0;
+      }
+      .filter-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+      }
+      th:hover {
+        background-color: #0056b3;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #e9ecef;
+      }
+      .pagination {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .pagination button {
+        margin-right: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      .pagination button:hover {
+        background-color: #0056b3;
+      }
+      .pagination button:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="filter-input"
+      class="filter-input"
+      placeholder="Search..."
+    />
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th data-column="name" data-order="desc">Name</th>
+          <th data-column="age" data-order="desc">Age</th>
+          <th data-column="city" data-order="desc">City</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="pagination" id="pagination"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
